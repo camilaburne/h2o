@@ -1,4 +1,3 @@
-list.files()
 library(h2o)
 
 options(scipen=999)
@@ -63,7 +62,4 @@ for (i in vq2) {
        xlab = paste(i, 'Corr =', round(cor(cc_df[,i], cc_df[, 'predict']),2)), ylab='Predicted' ) 
   abline(h = 0.85, col='orange', lwd=3, lty=3) 
 }
- 
-
-
 
