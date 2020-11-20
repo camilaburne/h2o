@@ -1,5 +1,6 @@
 # h2o
-Projects that use h2o.ai library
+Projects addressed with h2o.ai. 
+Requirements: h2o, ROCR, lubridate & ggplot2 libraries. 
 
 
 ## iTree 
