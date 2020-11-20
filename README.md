@@ -13,3 +13,5 @@ Purchase behaviour variable reduction with principal components analysis, using 
 ## GBM Grid
 Grid Search is an algorithm that adjusts thousands of models with different parameters, and chooses the best model by a metric (AUC in this case). Using the previous [credit card data set for fraud detection](https://www.kaggle.com/kartik2112/fraud-detection), a GBM quick grid with about 2K trees was adjusted to identify transactions. AUC obtained on the validation set is 94%. 
 
+
+![alt text](https://github.com/camilaburne/h2o/blob/main/GBM/auc.png  "Insane AUC curve")
