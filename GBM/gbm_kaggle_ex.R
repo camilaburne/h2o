@@ -42,20 +42,23 @@ train <- ss[[1]]
 valid <- ss[[2]]
 
 # GBM Grid parameters #####
+## Grid search is a tuning technique that attempts to compute the optimum values of hyperparameters. 
+## It is an exhaustive search that is performed on a the specific parameter values of a model. 
+
 minDepth <- 1
 maxDepth <- 3
 
 hyper_params = list(
-  max_depth = seq(minDepth,maxDepth,1),                                      
-  sample_rate = seq(0.2,1,0.01),                                             
-  col_sample_rate = seq(0.2,1,0.01),                                         
-  col_sample_rate_per_tree = seq(0.2,1,0.01),                                
-  col_sample_rate_change_per_level = seq(0.8,1.1,0.01),                      
-  min_rows = 2^seq(0,log2(nrow(data))-1,1),                                 
-  nbins = 2^seq(4,10,1),                                                     
-  nbins_cats = 2^seq(4,12,1),                                                
-  min_split_improvement = c(0,1e-8,1e-6,1e-4),                               
-  histogram_type = c("UniformAdaptive","QuantilesGlobal","RoundRobin")
+  max_depth = seq(minDepth,maxDepth,1), # maximum depth to which each tree will be built                                  
+  sample_rate = seq(0.2,1,0.01),        # specify the row (x-axis) sampling rate (without replacement)                                     
+  col_sample_rate = seq(0.2,1,0.01),    # specify the column (y-axis) sampling rate (without replacement)                                     
+  col_sample_rate_per_tree = seq(0.2,1,0.01), # specifies the column sampling rate for each tree                               
+  col_sample_rate_change_per_level = seq(0.8,1.1,0.01), #  how the sampling rate per split should change as a function of the tree depth                     
+  min_rows = 2^seq(0,log2(nrow(data))-1,1),    # minimum number of observations for a leaf in order to split                              
+  nbins = 2^seq(4,10,1),                # bins to be considered in each split                                     
+  nbins_cats = 2^seq(4,12,1),           # bins in categorical vars                                     
+  min_split_improvement = c(0,1e-8,1e-6,1e-4), # minimum relative improvement in sq error reduction for a split to occur                               
+  histogram_type = c("UniformAdaptive","QuantilesGlobal","RoundRobin") # method to insert bins
 )
 
 search_criteria = list(
