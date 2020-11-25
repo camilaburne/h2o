@@ -24,7 +24,7 @@ install.packages("h2o", type="source", repos=(c("http://h2o-release.s3.amazonaws
 
 Errors in installation usually are because of java older/newer version, for ex: you may need to [install java 8](https://stackoverflow.com/questions/60274066/error-while-using-h2o-init-in-r-java-related), or to [point to your java 8](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/faq/java.html#i-keep-getting-a-message-that-i-need-to-install-java-i-have-a-supported-version-of-java-installed-but-i-am-still-getting-this-message-what-should-i-do) in ios.  
 
-## Unsupervised cases
+## Unsupervised examples
 
 ### [iTree](https://github.com/camilaburne/h2o/tree/main/itree)
 
@@ -37,7 +37,7 @@ Anomaly detection with Isolation Forest (also referred as iTree in h2o documenta
 Purchase behaviour variable reduction with principal components analysis, using another [credit card data set from Kaggle](https://www.kaggle.com/kartik2112/fraud-detection) that was originally made for fraud detection. This data set includes purchases in categories such as restaurants, pets, gas stations, retail, miscellanea. With two components, about 72% of variance is explained. PCA in h2o follows same sintaxis as models, using model predict to score each PC. 
 
 
-## Supervised cases
+## Supervised examples
 
 ### [GBM Grid](https://github.com/camilaburne/h2o/tree/main/GBM)
 
